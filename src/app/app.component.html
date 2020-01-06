@@ -8,17 +8,22 @@
       class="example-list"
       (cdkDropListDropped)="drop($event)"
     >
-      <div class="example-box" *ngFor="let item of availableHeaders" cdkDrag>
-        {{ item }}
+      <div
+        class="example-box"
+        *ngFor="let item of availableHeaders"
+        [cdkDragDisabled]="item.disabled"
+        cdkDrag
+      >
+        {{ item.Name }}
       </div>
     </div>
   </div>
   <div class="dragReset-container">
-  <h3>Drag</h3>
-  <i class="material-icons icon">
-    sync_alt
-  </i><br>
-  <a class="reset" (click)="reset()">Reset</a>
+    <h3>Drag</h3>
+    <i class="material-icons icon">
+      sync_alt </i
+    ><br />
+    <a class="reset" (click)="reset()">Reset</a>
   </div>
   <div class="example-container">
     <h2>COLUMNS (CH)</h2>
@@ -29,8 +34,13 @@
       class="example-list"
       (cdkDropListDropped)="drop($event)"
     >
-      <div class="example-box" *ngFor="let item of columns" cdkDrag>
-        {{ item }}
+      <div
+        class="example-box"
+        *ngFor="let item of columns"
+        [cdkDragDisabled]="item.disabled"
+        cdkDrag
+      >
+        {{ item.Name }}
       </div>
     </div>
   </div>
@@ -44,8 +54,13 @@
       class="example-list"
       (cdkDropListDropped)="drop($event)"
     >
-      <div class="example-box" *ngFor="let item of rows" cdkDrag>
-        {{ item }}
+      <div
+        class="example-box"
+        *ngFor="let item of rows"
+        [cdkDragDisabled]="item.disabled"
+        cdkDrag
+      >
+        {{ item.Name }}
       </div>
     </div>
   </div>
